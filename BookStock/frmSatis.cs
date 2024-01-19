@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace BookStock
@@ -33,14 +35,14 @@ namespace BookStock
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmMusteriEkle ekle = new frmMusteriEkle();
-            ekle.ShowDialog();
+            //frmMusteriEkle ekle = new frmMusteriEkle();
+            //ekle.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmMusteriListele listele = new frmMusteriListele();
-            listele.ShowDialog();
+            //frmMusteriListele listele = new frmMusteriListele();
+            //listele.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -51,14 +53,14 @@ namespace BookStock
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmKategori kategori = new frmKategori();
-            kategori.ShowDialog();
+            //frmKategori kategori = new frmKategori();
+            //kategori.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmMarka marka = new frmMarka();
-            marka.ShowDialog();
+            //frmMarka marka = new frmMarka();
+            //marka.ShowDialog();
         }
 
         private void frmSatis_Load(object sender, EventArgs e)
@@ -146,10 +148,8 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("insert into Sepet(tc,adsoyad,telefon,barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@tc,@adsoyad,@telefon,@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
-                cmd.Parameters.AddWithValue("@tc", txtTC.Text);
-                cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
-                cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
+                SqlCommand cmd = new SqlCommand("insert into Sepet(barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
+             
                 cmd.Parameters.AddWithValue("@barkodno", txtBarkodNo.Text);
                 cmd.Parameters.AddWithValue("@urunadi", txtUrunAdi.Text);
                 cmd.Parameters.AddWithValue("@miktari", int.Parse(txtMiktari.Text));
@@ -278,6 +278,20 @@ namespace BookStock
             dataSet.Tables["Sepet"].Clear();
                 SepetListele();
                 hesapla();
+        }
+
+        private void lblGenelToplam_Click(object sender, EventArgs e)
+        {
+            //lblGenelToplam.Font = new System.Drawing.Font(lblGenelToplam.Font, System.Drawing.FontStyle.Bold);
+
+            // Label kontrolündeki metni büyük ve kalın yapmak için
+            lblGenelToplam.Font = new System.Drawing.Font(lblGenelToplam.Font.FontFamily, 16, FontStyle.Bold);
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

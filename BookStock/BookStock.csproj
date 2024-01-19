@@ -46,30 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmKategori.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmKategori.Designer.cs">
-      <DependentUpon>frmKategori.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMarka.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMarka.Designer.cs">
-      <DependentUpon>frmMarka.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMusteriEkle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMusteriEkle.Designer.cs">
-      <DependentUpon>frmMusteriEkle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMusteriListele.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMusteriListele.Designer.cs">
-      <DependentUpon>frmMusteriListele.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSatis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,18 +72,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmKategori.resx">
-      <DependentUpon>frmKategori.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMarka.resx">
-      <DependentUpon>frmMarka.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMusteriEkle.resx">
-      <DependentUpon>frmMusteriEkle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMusteriListele.resx">
-      <DependentUpon>frmMusteriListele.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSatis.resx">
       <DependentUpon>frmSatis.cs</DependentUpon>
     </EmbeddedResource>

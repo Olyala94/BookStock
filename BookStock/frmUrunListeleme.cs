@@ -21,7 +21,7 @@ namespace BookStock
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                comboKategori.Items.Add(reader["kategori"].ToString());
+                //comboKategori.Items.Add(reader["kategori"].ToString());
             }
             connection.Close();
         }
@@ -49,8 +49,8 @@ namespace BookStock
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             BarkodNoTxt.Text = dataGridView1.CurrentRow.Cells["barkodno"].Value.ToString();
-            KategoriTxt.Text = dataGridView1.CurrentRow.Cells["kategori"].Value.ToString();
-            YazarTxt.Text = dataGridView1.CurrentRow.Cells["marka"].Value.ToString();
+            //KategoriTxt.Text = dataGridView1.CurrentRow.Cells["kategori"].Value.ToString();
+            //YazarTxt.Text = dataGridView1.CurrentRow.Cells["marka"].Value.ToString();
             UrunAdiTxt.Text = dataGridView1.CurrentRow.Cells["urunadi"].Value.ToString();
             MiktarTxt.Text = dataGridView1.CurrentRow.Cells["miktari"].Value.ToString();
             AlisFiyatTxt.Text = dataGridView1.CurrentRow.Cells["alisfiyati"].Value.ToString();
@@ -82,46 +82,46 @@ namespace BookStock
 
         private void btnMarkaGüncelle_Click(object sender, EventArgs e)
         {
-            if (BarkodNoTxt.Text != "")
-            {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("Update Urun set kategori=@kategori, marka=@marka where barkodno=@barkodno", connection);
-                cmd.Parameters.AddWithValue("@barkodno", BarkodNoTxt.Text);
-                cmd.Parameters.AddWithValue("@kategori", comboKategori.Text);
-                cmd.Parameters.AddWithValue("@marka", comboMarka.Text);
+            //if (BarkodNoTxt.Text != "")
+            //{
+            //    connection.Open();
+            //    SqlCommand cmd = new SqlCommand("Update Urun set kategori=@kategori, marka=@marka where barkodno=@barkodno", connection);
+            //    cmd.Parameters.AddWithValue("@barkodno", BarkodNoTxt.Text);
+            //    cmd.Parameters.AddWithValue("@kategori", comboKategori.Text);
+            //    cmd.Parameters.AddWithValue("@marka", comboMarka.Text);
 
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Güncelleme Başarı bir şekilde Yapıldı");
-                dataSet.Tables["Urun"].Clear();
-                UrunListele();
-            }
-            else
-            {
-                MessageBox.Show("BarkodNo yazılı değil");
-            }
+            //    cmd.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show("Güncelleme Başarı bir şekilde Yapıldı");
+            //    dataSet.Tables["Urun"].Clear();
+            //    UrunListele();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("BarkodNo yazılı değil");
+            //}
 
-            foreach (Control item in this.Controls)
-            {
-                if (item is ComboBox)
-                {
-                    ((ComboBox)item).Text = "";
-                }
-            }
+            //foreach (Control item in this.Controls)
+            //{
+            //    if (item is ComboBox)
+            //    {
+            //        ((ComboBox)item).Text = "";
+            //    }
+            //}
         }
 
         private void comboKategori_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboMarka.Items.Clear();
-            comboMarka.Text = "";
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("select * from MarkaBilgileri where kategori ='" + comboKategori.SelectedItem + "'", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                comboKategori.Items.Add(reader["marka"].ToString());
-            }
-            connection.Close();
+            ////comboMarka.Items.Clear();
+            ////comboMarka.Text = "";
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand("select * from MarkaBilgileri where kategori ='" + /*comboKategori.SelectedItem + "'", connection);*/
+            //SqlDataReader reader = cmd.ExecuteReader();
+            //while (reader.Read())
+            //{
+            //    comboKategori.Items.Add(reader["marka"].ToString());
+            //}
+            //connection.Close();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
