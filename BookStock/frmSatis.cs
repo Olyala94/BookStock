@@ -90,20 +90,7 @@ namespace BookStock
         }
         private void txtTC_TextChanged(object sender, EventArgs e)
         {
-            if (txtTC.Text == "")
-            {
-                txtAdSoyad.Text = "";
-                txtTelefon.Text = "";
-            }
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("Select * From Musteri where tc like '" + txtTC.Text + "'", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                txtAdSoyad.Text = reader["adsoyad"].ToString();
-                txtAdSoyad.Text = reader["telefon"].ToString();
-            }
-            connection.Close();
+           
         }
         private void txtBarkodNo_TextChanged(object sender, EventArgs e)
         {
@@ -152,6 +139,57 @@ namespace BookStock
             }
 
         }
+        //private void btnEkle_Click(object sender, EventArgs e)
+        //{
+        //    BarkodControl();
+        //    if (durum == true)
+        //    {
+        //        connection.Close();
+        //        connection.Open();
+        //        SqlCommand cmd = new SqlCommand("insert into Sepet(barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
+        //        //cmd.Parameters.AddWithValue("@tc", txtTC.Text);
+        //        //cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
+        //        //cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
+        //        cmd.Parameters.AddWithValue("@barkodno", txtBarkodNo.Text);
+        //        cmd.Parameters.AddWithValue("@urunadi", txtUrunAdi.Text);
+        //        cmd.Parameters.AddWithValue("@miktari", int.Parse(txtMiktari.Text));
+        //        cmd.Parameters.AddWithValue("@satisfiyati", double.Parse(txtSatisFiyat.Text));
+        //        cmd.Parameters.AddWithValue("@toplamfiyati", double.Parse(txtToplamFiyat.Text));
+        //        cmd.Parameters.AddWithValue("@tarih", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        //        cmd.ExecuteNonQuery();
+        //        connection.Close();
+        //    }
+        //    else
+        //    {
+        //        connection.Close();
+        //        connection.Open();
+        //        SqlCommand cmd2 = new SqlCommand("Update Sepet Set miktari=miktari+'" + int.Parse(txtMiktari.Text) + "' where barkodno = '" + txtBarkodNo.Text + "'", connection);
+        //        cmd2.ExecuteNonQuery();
+
+        //        //miktari değiştiği zaman toplam fiyatında değişmesi için...
+        //        SqlCommand cmd3 = new SqlCommand("Update Sepet Set toplamfiyati=miktari*satisfiyati where barkodno = '" + txtBarkodNo.Text + "'", connection);
+        //        cmd3.ExecuteNonQuery();
+
+        //        connection.Close();
+        //    }
+
+        //    txtMiktari.Text = "1";
+        //    dataSet.Tables["Sepet"].Clear();
+        //    SepetListele();
+        //    hesapla();
+        //    foreach (Control item in groupBox2.Controls)
+        //    {
+        //        if (item is TextBox)
+        //        {
+        //            if (item != txtMiktari)
+        //            {
+        //                item.Text = "";
+        //            }
+        //        }
+
+        //    }
+        //}
+
         private void btnEkle_Click(object sender, EventArgs e)
         {
             BarkodControl();
@@ -159,10 +197,7 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("insert into Sepet(tc,adsoyad,telefon,barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@tc,@adsoyad,@telefon,@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
-                cmd.Parameters.AddWithValue("@tc", txtTC.Text);
-                cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
-                cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Sepet(barkodno, urunadi, miktari, satisfiyati, toplamfiyati, tarih) VALUES (@barkodno, @urunadi, @miktari, @satisfiyati, @toplamfiyati, @tarih)", connection);
                 cmd.Parameters.AddWithValue("@barkodno", txtBarkodNo.Text);
                 cmd.Parameters.AddWithValue("@urunadi", txtUrunAdi.Text);
                 cmd.Parameters.AddWithValue("@miktari", int.Parse(txtMiktari.Text));
@@ -176,16 +211,16 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd2 = new SqlCommand("Update Sepet Set miktari=miktari+'" + int.Parse(txtMiktari.Text) + "' where barkodno = '" + txtBarkodNo.Text + "'", connection);
+                SqlCommand cmd2 = new SqlCommand("UPDATE Sepet SET miktari = miktari + '" + int.Parse(txtMiktari.Text) + "' WHERE barkodno = '" + txtBarkodNo.Text + "'", connection);
                 cmd2.ExecuteNonQuery();
 
-                //miktari değiştiği zaman toplam fiyatında değişmesi için...
-                SqlCommand cmd3 = new SqlCommand("Update Sepet Set toplamfiyati=miktari*satisfiyati where barkodno = '" + txtBarkodNo.Text + "'", connection);
+                // Miktari değiştiği zaman toplam fiyatında değişmesi için...
+                SqlCommand cmd3 = new SqlCommand("UPDATE Sepet SET toplamfiyati = miktari * satisfiyati WHERE barkodno = '" + txtBarkodNo.Text + "'", connection);
                 cmd3.ExecuteNonQuery();
 
                 connection.Close();
             }
-            
+
             txtMiktari.Text = "1";
             dataSet.Tables["Sepet"].Clear();
             SepetListele();
@@ -199,9 +234,9 @@ namespace BookStock
                         item.Text = "";
                     }
                 }
-
             }
         }
+
 
         private void txtMiktari_TextChanged(object sender, EventArgs e)
         {
@@ -266,10 +301,8 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("insert into Satis(tc,adsoyad,telefon,barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@tc,@adsoyad,@telefon,@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
-                cmd.Parameters.AddWithValue("@tc", txtTC.Text);
-                cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
-                cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
+                SqlCommand cmd = new SqlCommand("insert into Satis(barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
+                
                 //kaçtane kayıt varsa onu barkodno sütünine aktar dedim 
                 cmd.Parameters.AddWithValue("@barkodno", dataGridView1.Rows[i].Cells["barkodno"].Value.ToString());
                 cmd.Parameters.AddWithValue("@urunadi", dataGridView1.Rows[i].Cells["urunadi"].Value.ToString());
@@ -278,8 +311,20 @@ namespace BookStock
                 cmd.Parameters.AddWithValue("@toplamfiyati", double.Parse(dataGridView1.Rows[i].Cells["toplamfiyati"].Value.ToString()));
                 cmd.Parameters.AddWithValue("@tarih", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 cmd.ExecuteNonQuery();
-                connection.Close();
+                             //Stoktan ürünleri düşürecek...
+                SqlCommand cmd2 = new SqlCommand("Update Urun set miktari = miktari- '" + int.Parse(dataGridView1.Rows[i].Cells["miktari"].Value.ToString()) + "' where barkodno = '" + dataGridView1.Rows[i].Cells["barkodno"].Value.ToString() + "'", connection);
+                cmd2.ExecuteNonQuery();
+
+               connection.Close();
             }
+            connection.Open();
+            SqlCommand cmd3 = new SqlCommand("delete from Sepet", connection);
+            cmd3.ExecuteNonQuery();
+            connection.Close();
+
+            dataSet.Tables["Sepet"].Clear();
+                SepetListele();
+                hesapla();
         }
     }
 }
