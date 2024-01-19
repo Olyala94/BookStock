@@ -71,11 +71,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(332, 188);
+            this.dataGridView1.Location = new System.Drawing.Point(305, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(732, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(841, 345);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -298,11 +298,12 @@
             // lblGenelToplam
             // 
             this.lblGenelToplam.AutoSize = true;
-            this.lblGenelToplam.Location = new System.Drawing.Point(912, 565);
+            this.lblGenelToplam.ForeColor = System.Drawing.Color.Red;
+            this.lblGenelToplam.Location = new System.Drawing.Point(901, 565);
             this.lblGenelToplam.Name = "lblGenelToplam";
-            this.lblGenelToplam.Size = new System.Drawing.Size(17, 16);
+            this.lblGenelToplam.Size = new System.Drawing.Size(31, 16);
             this.lblGenelToplam.TabIndex = 8;
-            this.lblGenelToplam.Text = "= ";
+            this.lblGenelToplam.Text = "0.00";
             // 
             // panel1
             // 
@@ -394,7 +395,7 @@
             this.AcceptButton = this.btnEkle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1179, 673);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblGenelToplam);

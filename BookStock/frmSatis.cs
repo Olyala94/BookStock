@@ -139,57 +139,6 @@ namespace BookStock
             }
 
         }
-        //private void btnEkle_Click(object sender, EventArgs e)
-        //{
-        //    BarkodControl();
-        //    if (durum == true)
-        //    {
-        //        connection.Close();
-        //        connection.Open();
-        //        SqlCommand cmd = new SqlCommand("insert into Sepet(barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
-        //        //cmd.Parameters.AddWithValue("@tc", txtTC.Text);
-        //        //cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
-        //        //cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
-        //        cmd.Parameters.AddWithValue("@barkodno", txtBarkodNo.Text);
-        //        cmd.Parameters.AddWithValue("@urunadi", txtUrunAdi.Text);
-        //        cmd.Parameters.AddWithValue("@miktari", int.Parse(txtMiktari.Text));
-        //        cmd.Parameters.AddWithValue("@satisfiyati", double.Parse(txtSatisFiyat.Text));
-        //        cmd.Parameters.AddWithValue("@toplamfiyati", double.Parse(txtToplamFiyat.Text));
-        //        cmd.Parameters.AddWithValue("@tarih", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-        //        cmd.ExecuteNonQuery();
-        //        connection.Close();
-        //    }
-        //    else
-        //    {
-        //        connection.Close();
-        //        connection.Open();
-        //        SqlCommand cmd2 = new SqlCommand("Update Sepet Set miktari=miktari+'" + int.Parse(txtMiktari.Text) + "' where barkodno = '" + txtBarkodNo.Text + "'", connection);
-        //        cmd2.ExecuteNonQuery();
-
-        //        //miktari değiştiği zaman toplam fiyatında değişmesi için...
-        //        SqlCommand cmd3 = new SqlCommand("Update Sepet Set toplamfiyati=miktari*satisfiyati where barkodno = '" + txtBarkodNo.Text + "'", connection);
-        //        cmd3.ExecuteNonQuery();
-
-        //        connection.Close();
-        //    }
-
-        //    txtMiktari.Text = "1";
-        //    dataSet.Tables["Sepet"].Clear();
-        //    SepetListele();
-        //    hesapla();
-        //    foreach (Control item in groupBox2.Controls)
-        //    {
-        //        if (item is TextBox)
-        //        {
-        //            if (item != txtMiktari)
-        //            {
-        //                item.Text = "";
-        //            }
-        //        }
-
-        //    }
-        //}
-
         private void btnEkle_Click(object sender, EventArgs e)
         {
             BarkodControl();
@@ -197,7 +146,10 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Sepet(barkodno, urunadi, miktari, satisfiyati, toplamfiyati, tarih) VALUES (@barkodno, @urunadi, @miktari, @satisfiyati, @toplamfiyati, @tarih)", connection);
+                SqlCommand cmd = new SqlCommand("insert into Sepet(tc,adsoyad,telefon,barkodno,urunadi,miktari,satisfiyati,toplamfiyati,tarih) values(@tc,@adsoyad,@telefon,@barkodno,@urunadi,@miktari,@satisfiyati,@toplamfiyati,@tarih)", connection);
+                cmd.Parameters.AddWithValue("@tc", txtTC.Text);
+                cmd.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
+                cmd.Parameters.AddWithValue("@telefon", txtTelefon.Text);
                 cmd.Parameters.AddWithValue("@barkodno", txtBarkodNo.Text);
                 cmd.Parameters.AddWithValue("@urunadi", txtUrunAdi.Text);
                 cmd.Parameters.AddWithValue("@miktari", int.Parse(txtMiktari.Text));
@@ -211,11 +163,11 @@ namespace BookStock
             {
                 connection.Close();
                 connection.Open();
-                SqlCommand cmd2 = new SqlCommand("UPDATE Sepet SET miktari = miktari + '" + int.Parse(txtMiktari.Text) + "' WHERE barkodno = '" + txtBarkodNo.Text + "'", connection);
+                SqlCommand cmd2 = new SqlCommand("Update Sepet Set miktari=miktari+'" + int.Parse(txtMiktari.Text) + "' where barkodno = '" + txtBarkodNo.Text + "'", connection);
                 cmd2.ExecuteNonQuery();
 
-                // Miktari değiştiği zaman toplam fiyatında değişmesi için...
-                SqlCommand cmd3 = new SqlCommand("UPDATE Sepet SET toplamfiyati = miktari * satisfiyati WHERE barkodno = '" + txtBarkodNo.Text + "'", connection);
+                //miktari değiştiği zaman toplam fiyatında değişmesi için...
+                SqlCommand cmd3 = new SqlCommand("Update Sepet Set toplamfiyati=miktari*satisfiyati where barkodno = '" + txtBarkodNo.Text + "'", connection);
                 cmd3.ExecuteNonQuery();
 
                 connection.Close();
@@ -234,6 +186,7 @@ namespace BookStock
                         item.Text = "";
                     }
                 }
+
             }
         }
 
