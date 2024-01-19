@@ -220,6 +220,7 @@
             this.txtSatisFiyat.Name = "txtSatisFiyat";
             this.txtSatisFiyat.Size = new System.Drawing.Size(100, 22);
             this.txtSatisFiyat.TabIndex = 4;
+            this.txtSatisFiyat.TextChanged += new System.EventHandler(this.txtSatisFiyat_TextChanged);
             // 
             // txtMiktari
             // 
@@ -227,6 +228,8 @@
             this.txtMiktari.Name = "txtMiktari";
             this.txtMiktari.Size = new System.Drawing.Size(100, 22);
             this.txtMiktari.TabIndex = 3;
+            this.txtMiktari.Text = "1";
+            this.txtMiktari.TextChanged += new System.EventHandler(this.txtMiktari_TextChanged);
             // 
             // txtUrunAdi
             // 
@@ -241,47 +244,52 @@
             this.txtBarkodNo.Name = "txtBarkodNo";
             this.txtBarkodNo.Size = new System.Drawing.Size(100, 22);
             this.txtBarkodNo.TabIndex = 1;
+            this.txtBarkodNo.TextChanged += new System.EventHandler(this.txtBarkodNo_TextChanged);
             // 
             // btnEkle
             // 
             this.btnEkle.Location = new System.Drawing.Point(347, 550);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(75, 32);
+            this.btnEkle.Size = new System.Drawing.Size(86, 47);
             this.btnEkle.TabIndex = 3;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(1071, 188);
+            this.btnSil.Location = new System.Drawing.Point(454, 550);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 38);
+            this.btnSil.Size = new System.Drawing.Size(82, 47);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnSatisIptal
             // 
-            this.btnSatisIptal.Location = new System.Drawing.Point(1071, 235);
+            this.btnSatisIptal.Location = new System.Drawing.Point(564, 550);
             this.btnSatisIptal.Name = "btnSatisIptal";
             this.btnSatisIptal.Size = new System.Drawing.Size(75, 47);
             this.btnSatisIptal.TabIndex = 5;
             this.btnSatisIptal.Text = "Satış İptal";
             this.btnSatisIptal.UseVisualStyleBackColor = true;
+            this.btnSatisIptal.Click += new System.EventHandler(this.btnSatisIptal_Click);
             // 
             // btnSatisYap
             // 
-            this.btnSatisYap.Location = new System.Drawing.Point(987, 550);
+            this.btnSatisYap.Location = new System.Drawing.Point(665, 550);
             this.btnSatisYap.Name = "btnSatisYap";
-            this.btnSatisYap.Size = new System.Drawing.Size(75, 32);
+            this.btnSatisYap.Size = new System.Drawing.Size(75, 47);
             this.btnSatisYap.TabIndex = 6;
             this.btnSatisYap.Text = "Satış Yap";
             this.btnSatisYap.UseVisualStyleBackColor = true;
+            this.btnSatisYap.Click += new System.EventHandler(this.btnSatisYap_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(741, 565);
+            this.label9.Location = new System.Drawing.Point(799, 565);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 16);
             this.label9.TabIndex = 7;
@@ -290,10 +298,11 @@
             // lblGenelToplam
             // 
             this.lblGenelToplam.AutoSize = true;
-            this.lblGenelToplam.Location = new System.Drawing.Point(842, 565);
+            this.lblGenelToplam.Location = new System.Drawing.Point(912, 565);
             this.lblGenelToplam.Name = "lblGenelToplam";
-            this.lblGenelToplam.Size = new System.Drawing.Size(0, 16);
+            this.lblGenelToplam.Size = new System.Drawing.Size(17, 16);
             this.lblGenelToplam.TabIndex = 8;
+            this.lblGenelToplam.Text = "= ";
             // 
             // panel1
             // 
@@ -338,6 +347,7 @@
             this.button9.TabIndex = 4;
             this.button9.Text = "Satışları Listeleme";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -381,6 +391,7 @@
             // 
             // frmSatis
             // 
+            this.AcceptButton = this.btnEkle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -398,6 +409,7 @@
             this.Name = "frmSatis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış Sayfası";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmSatis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
