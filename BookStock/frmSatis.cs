@@ -21,9 +21,19 @@ namespace BookStock
             SqlDataAdapter adapter = new SqlDataAdapter("Select * From Sepet", connection);
             adapter.Fill(dataSet, "sepet");
             dataGridView1.DataSource = dataSet.Tables["Sepet"];
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Visible = false;
-            dataGridView1.Columns[2].Visible = false;
+            //ilk üç Sütünü gizle.....
+            //dataGridView1.Columns[0].Visible = false;
+            //dataGridView1.Columns[1].Visible = false;
+            //dataGridView1.Columns[2].Visible = false;
+
+
+            //Sütun başlıklarını güzelleştirmek için
+            dataGridView1.Columns["barkodno"].HeaderText = "Barkod No";
+            dataGridView1.Columns["urunadi"].HeaderText = "Ürün Adı";
+            dataGridView1.Columns["miktari"].HeaderText = "Miktarı";
+            dataGridView1.Columns["satisfiyati"].HeaderText = "Satış Fiyatı";
+            dataGridView1.Columns["toplamfiyati"].HeaderText = "Toplam Fiyat";
+            dataGridView1.Columns["tarih"].HeaderText = "Tarih";
             connection.Close();
         }
         private void label2_Click(object sender, EventArgs e)
@@ -31,18 +41,14 @@ namespace BookStock
 
         }
 
-
-
         private void button5_Click(object sender, EventArgs e)
         {
-            //frmMusteriEkle ekle = new frmMusteriEkle();
-            //ekle.ShowDialog();
+          
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //frmMusteriListele listele = new frmMusteriListele();
-            //listele.ShowDialog();
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -53,14 +59,12 @@ namespace BookStock
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frmKategori kategori = new frmKategori();
-            //kategori.ShowDialog();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //frmMarka marka = new frmMarka();
-            //marka.ShowDialog();
+          
         }
 
         private void frmSatis_Load(object sender, EventArgs e)
@@ -186,10 +190,8 @@ namespace BookStock
                         item.Text = "";
                     }
                 }
-
             }
         }
-
 
         private void txtMiktari_TextChanged(object sender, EventArgs e)
         {
@@ -198,10 +200,7 @@ namespace BookStock
                 txtToplamFiyat.Text = (double.Parse(txtMiktari.Text) * double.Parse(txtSatisFiyat.Text)).ToString();
             }
             catch (Exception)
-            {
-
-                ;
-            }
+            {}
         }
 
         private void txtSatisFiyat_TextChanged(object sender, EventArgs e)
@@ -211,10 +210,7 @@ namespace BookStock
                 txtToplamFiyat.Text = (double.Parse(txtMiktari.Text) * double.Parse(txtSatisFiyat.Text)).ToString();
             }
             catch (Exception)
-            {
-
-                ;
-            }
+            {}
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -281,12 +277,8 @@ namespace BookStock
         }
 
         private void lblGenelToplam_Click(object sender, EventArgs e)
-        {
-            //lblGenelToplam.Font = new System.Drawing.Font(lblGenelToplam.Font, System.Drawing.FontStyle.Bold);
-
-            // Label kontrolündeki metni büyük ve kalın yapmak için
+        {       
             lblGenelToplam.Font = new System.Drawing.Font(lblGenelToplam.Font.FontFamily, 16, FontStyle.Bold);
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -78,48 +78,48 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 256);
+            this.label15.Location = new System.Drawing.Point(21, 250);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 16);
+            this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 28;
-            this.label15.Text = "Satış Fiyatı";
+            this.label15.Text = "Satış Fiyatı:";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 209);
+            this.label16.Location = new System.Drawing.Point(29, 206);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 16);
+            this.label16.Size = new System.Drawing.Size(67, 16);
             this.label16.TabIndex = 29;
-            this.label16.Text = "Alış Fiyatı";
+            this.label16.Text = "Alış Fiyatı:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(47, 168);
+            this.label17.Location = new System.Drawing.Point(44, 162);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 16);
+            this.label17.Size = new System.Drawing.Size(49, 16);
             this.label17.TabIndex = 30;
-            this.label17.Text = "Miktarı";
+            this.label17.Text = "Miktarı:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(36, 114);
+            this.label18.Location = new System.Drawing.Point(29, 121);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(57, 16);
+            this.label18.Size = new System.Drawing.Size(60, 16);
             this.label18.TabIndex = 31;
-            this.label18.Text = "Stok Adı";
+            this.label18.Text = "Stok Adı:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label21.Location = new System.Drawing.Point(27, 73);
+            this.label21.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label21.Location = new System.Drawing.Point(21, 76);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 16);
+            this.label21.Size = new System.Drawing.Size(72, 16);
             this.label21.TabIndex = 34;
-            this.label21.Text = "BarkodNo";
+            this.label21.Text = "BarkodNo:";
             // 
             // label8
             // 
@@ -207,7 +207,7 @@
             // 
             // UrunAdiTxt
             // 
-            this.UrunAdiTxt.Location = new System.Drawing.Point(99, 111);
+            this.UrunAdiTxt.Location = new System.Drawing.Point(99, 118);
             this.UrunAdiTxt.Name = "UrunAdiTxt";
             this.UrunAdiTxt.Size = new System.Drawing.Size(224, 22);
             this.UrunAdiTxt.TabIndex = 20;
@@ -224,20 +224,20 @@
             // 
             // txtBarkodNoAra
             // 
-            this.txtBarkodNoAra.Location = new System.Drawing.Point(505, 32);
+            this.txtBarkodNoAra.Location = new System.Drawing.Point(485, 32);
             this.txtBarkodNoAra.Name = "txtBarkodNoAra";
-            this.txtBarkodNoAra.Size = new System.Drawing.Size(576, 22);
+            this.txtBarkodNoAra.Size = new System.Drawing.Size(596, 22);
             this.txtBarkodNoAra.TabIndex = 36;
             this.txtBarkodNoAra.TextChanged += new System.EventHandler(this.txtBarkodNoAra_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(355, 32);
+            this.label1.Location = new System.Drawing.Point(332, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 16);
+            this.label1.Size = new System.Drawing.Size(147, 16);
             this.label1.TabIndex = 37;
-            this.label1.Text = "BarkodNo ya Göre Ara";
+            this.label1.Text = "BarkodNo ye Göre Ara:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmUrunListeleme

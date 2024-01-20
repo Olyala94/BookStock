@@ -42,14 +42,13 @@
             this.txtBarkodNo = new System.Windows.Forms.TextBox();
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
-            this.btnSatisIptal = new System.Windows.Forms.Button();
             this.btnSatisYap = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lblGenelToplam = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,7 +170,7 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(312, 487);
+            this.btnEkle.Location = new System.Drawing.Point(325, 487);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(146, 47);
             this.btnEkle.TabIndex = 3;
@@ -181,30 +180,20 @@
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(475, 487);
+            this.btnSil.Location = new System.Drawing.Point(508, 487);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(123, 47);
+            this.btnSil.Size = new System.Drawing.Size(144, 52);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnSatisIptal
-            // 
-            this.btnSatisIptal.Location = new System.Drawing.Point(614, 487);
-            this.btnSatisIptal.Name = "btnSatisIptal";
-            this.btnSatisIptal.Size = new System.Drawing.Size(124, 47);
-            this.btnSatisIptal.TabIndex = 5;
-            this.btnSatisIptal.Text = "Satış İptal";
-            this.btnSatisIptal.UseVisualStyleBackColor = true;
-            this.btnSatisIptal.Click += new System.EventHandler(this.btnSatisIptal_Click);
-            // 
             // btnSatisYap
             // 
-            this.btnSatisYap.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSatisYap.Location = new System.Drawing.Point(760, 583);
+            this.btnSatisYap.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSatisYap.Location = new System.Drawing.Point(725, 487);
             this.btnSatisYap.Name = "btnSatisYap";
-            this.btnSatisYap.Size = new System.Drawing.Size(386, 78);
+            this.btnSatisYap.Size = new System.Drawing.Size(410, 100);
             this.btnSatisYap.TabIndex = 6;
             this.btnSatisYap.Text = "Sipariş Bilgilerini Kaydet";
             this.btnSatisYap.UseVisualStyleBackColor = false;
@@ -242,6 +231,16 @@
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(917, 55);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(218, 51);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Ürün Ekleme";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(305, 55);
@@ -262,16 +261,6 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(917, 55);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(218, 51);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Ürün Ekleme";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // frmSatis
             // 
             this.AcceptButton = this.btnEkle;
@@ -284,7 +273,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSatisYap);
-            this.Controls.Add(this.btnSatisIptal);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.dataGridView1);
@@ -317,7 +305,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnSatisIptal;
         private System.Windows.Forms.Button btnSatisYap;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblGenelToplam;
